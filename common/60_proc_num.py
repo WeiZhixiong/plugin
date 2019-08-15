@@ -51,7 +51,7 @@ def read_cmd_output(cmd):
 def get_proc_num(proc_name):
     if IS_LINUX:
         if proc_name == "all":
-            cmd = "ls /proc/[1-9]* -d | wc -l"
+            cmd = "ls /proc/[1-9]* -d 2>/dev/null | wc -l"
             proc_nmu = read_cmd_output(cmd)
             return proc_nmu
         else:
